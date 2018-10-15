@@ -3,7 +3,9 @@ import './App.css';
 import { Navbar } from "react-bootstrap"
 import { NavItem } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
-
+import CreateItem from "./CreateItem"
+import { Jumbotron } from "react-bootstrap"
+import { Button } from "react-bootstrap"
 
 class App extends Component {
   render() {
@@ -29,6 +31,17 @@ class App extends Component {
             </Navbar.Collapse>
           </Navbar>
         </header>
+        <Jumbotron>
+          <h1>Bucket List!</h1>
+          <p>
+            This is a simple hero application where you can keep track of your bucket list progress :)
+  </p>
+          <p>
+          </p>
+        </Jumbotron>
+        <section className="form">
+          <CreateItem />
+        </section>
       </div>
     );
   }
