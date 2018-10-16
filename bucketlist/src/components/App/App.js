@@ -3,7 +3,7 @@ import './App.css';
 import { Navbar } from "react-bootstrap"
 import { NavItem } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
-import CreateItem from "./CreateItem"
+import CreateItem from "../createItem/CreateItem"
 import { Jumbotron } from "react-bootstrap"
 import {
   BrowserRouter as Router,
@@ -12,6 +12,7 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom'
+import ListItem from '../ListItem/ListItem';
 
 
 class App extends Component {
@@ -30,20 +31,20 @@ class App extends Component {
             <Navbar inverse collapseOnSelect>
               <Navbar.Header>
                 <Navbar.Brand>
-                  <a href="#brand">React-BucketList</a>
+                  <a href="/">React-BucketList</a>
                 </Navbar.Brand>
                 <Navbar.Toggle />
               </Navbar.Header>
               <Navbar.Collapse>
                 <Nav pullRight>
                   <NavItem eventKey={1} href="#">
-                    <Link to="/createitem">
+                    <Link to="/createitem" style={{ textDecoration: 'none', color: "darkgrey" }}>
                       Create Item
                     </Link>
                   </NavItem>
-                  <NavItem eventKey={2} href="#">
-                    Link Right
-      </NavItem>
+                  <NavItem>
+                    <Link to="/listItems">List</Link>
+                  </NavItem>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
@@ -61,10 +62,11 @@ class App extends Component {
           <main>
             <Switch>
               <Route path="/createitem" render={props => <CreateItem {...this.state} {...props} stocks={this.props.stocks} />} />
+              <Route path="/listItems" Component={ListItem} />
             </Switch>
           </main>
         </div>
-      </Router>
+      </Router >
     );
   }
 }
