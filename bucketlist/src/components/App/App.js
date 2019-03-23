@@ -52,7 +52,7 @@ class App extends Component {
           <Jumbotron>
             <h1>Bucket List!</h1>
             <p>
-              This is a simple hero application where you can keep track of your bucket list progress :)
+              We're here to help you keep track of your bucket list progress :)
   </p>
             <p>
             </p>
